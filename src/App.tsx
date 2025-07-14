@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import Test from './pages/Test'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Home from './pages/Home';
+
+import './App.css';
 
 function App() {
   return (
-    <>
-    <Test/>
-    
-    
-
-    </>
-  )
+    <Router>
+      <div className="font-poppins">
+        <Navigation />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
