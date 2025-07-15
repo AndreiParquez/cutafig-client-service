@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const Home: React.FC = () => {
   // Animation variants
@@ -46,7 +49,7 @@ const Home: React.FC = () => {
       <div>
         <div className="flex items-center justify-center my-8">
           <hr className="flex-grow border-t border-gray-300 mx-4" />
-          <span className="text-center font-semibold">Featured Articles</span>
+          <span className="text-center font-semibold font-caveat text-4xl">Featured Articles</span>
           <hr className="flex-grow border-t border-gray-300 mx-4" />
         </div>
         <motion.section
@@ -67,7 +70,7 @@ const Home: React.FC = () => {
               <img src='https://picsum.photos/seed/uy4r/480/300' loading='lazy' alt="Article 1" className=" rounded-xl md:w-1/2 object-cover" />
               <div className="p-4 flex flex-col justify-between">
                 <div>
-                  <span className="font-semibold text-lg hover:underline hover:!cursor-pointer ">Article 1</span>
+                  <span className="font-semibold hover:underline hover:!cursor-pointer font-caveat text-3xl">Article 1</span>
                   <p className="text-sm text-gray-600 mt-2">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam minima ducimus provident earum culpa nobis officiis iste aperiam incidunt similique maxime neque laboriosam distinctio quia pariatur, obcaecati eius. Laudantium, quibusdam?
                     Hic placeat reiciendis inventore eveniet optio quas eius officiis error distinctio sint, iure autem odit pariatur corporis et illo dolor ullam excepturi? Ipsam voluptates minus reiciendis mollitia, delectus saepe. Tenetur?
@@ -88,7 +91,7 @@ const Home: React.FC = () => {
               <img src='https://picsum.photos/seed/picsum/480/300' loading='lazy' alt="Article 2" className="rounded-xl md:w-1/2 object-cover" />
               <div className="p-4 flex flex-col justify-between">
                 <div>
-                  <h2 className="font-semibold text-lg">Article 2</h2>
+                  <h2 className="font-semibold text-3xl font-caveat">Article 2</h2>
                   <p className="text-sm text-gray-600 mt-2">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam minima ducimus provident earum culpa nobis officiis iste aperiam incidunt similique maxime neque laboriosam distinctio quia pariatur, obcaecati eius. Laudantium, quibusdam?
                     Hic placeat reiciendis inventore eveniet optio quas eius officiis error distinctio sint, iure autem odit pariatur corporis et illo dolor ullam excepturi? Ipsam voluptates minus reiciendis mollitia, delectus saepe. Tenetur?
@@ -121,7 +124,7 @@ const Home: React.FC = () => {
 
           {/* View more button: span all columns on mobile */}
           <motion.div
-            className="md:col-span-3  flex justify-center  mt-6"
+            className="md:col-span-4  flex justify-center  mt-6"
             whileHover="hover"
             initial="rest"
             animate="rest"
@@ -150,7 +153,7 @@ const Home: React.FC = () => {
       <div>
         <div className="flex items-center justify-center my-8">
           <hr className="flex-grow border-t border-gray-300 mx-4" />
-          <span className="text-center font-semibold">Blogs</span>
+          <span className="text-center font-semibold font-caveat text-5xl">Blogs</span>
           <hr className="flex-grow border-t border-gray-300 mx-4" />
         </div>
         <motion.div
@@ -158,9 +161,9 @@ const Home: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
-          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 justify-center items-center px-4 py-3 md:py-4  '>
+          className='flex md:space-x-10 space-x-0 space-y-10 md:space-y-0 md:flex-row flex-col justify-center items-center px-4 py-3 md:py-4  '>
           {/* Blog articles will be rendered here */}
-          <motion.div variants={itemVariants} className='flex flex-col  items-center '>
+          <motion.div variants={itemVariants} className='flex flex-col  items-center'>
             <img src='https://picsum.photos/seed/454/480/350' loading='lazy' alt="Article 1" className=" rounded-xl w-full object-cover" />
             <div className='w-full'>
               <div className='flex items-center space-x-2 mt-2'>
@@ -169,7 +172,7 @@ const Home: React.FC = () => {
 
               </div>
 
-              <span className="font-semibold text-lg hover:underline hover:!cursor-pointer ">Article 1</span>
+              <span className="font-semibold  hover:underline hover:!cursor-pointer font-caveat text-3xl">Blog 1</span>
               <p className="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             </div>
@@ -184,7 +187,7 @@ const Home: React.FC = () => {
 
               </div>
 
-              <span className="font-semibold text-lg hover:underline hover:!cursor-pointer ">Article 1</span>
+              <span className="font-semibold text-3xl font-caveat hover:underline hover:!cursor-pointer ">Blog 1</span>
               <p className="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             </div>
@@ -199,16 +202,83 @@ const Home: React.FC = () => {
 
               </div>
 
-              <span className="font-semibold text-lg hover:underline hover:!cursor-pointer ">Article 1</span>
+              <span className="font-semibold text-3xl font-caveat hover:underline hover:!cursor-pointer ">Blog 1</span>
               <p className="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             </div>
 
           </motion.div>
 
+
+        </motion.div>
+        {/* View more button: span all columns on mobile */}
+        <motion.div
+          className="md:col-span-4  flex justify-center mt-6 "
+          whileHover="hover"
+          initial="rest"
+          animate="rest"
+        >
+          <button
+            className="flex items-center text-gray-700 hover:text-black text-sm"
+            type="button"
+          >
+            View More
+            <motion.img
+              variants={{
+                rest: { x: 0 },
+                hover: { x: 5 },
+              }}
+              transition={{ type: "spring", stiffness: 300 }}
+              src="../assets/icons/arrow.svg"
+              alt=""
+              className='ml-1 h-4 w-4'
+            />
+          </button>
         </motion.div>
 
 
+      </div>
+
+      <div>
+        <div className="flex items-center justify-center my-8">
+          <hr className="flex-grow border-t border-gray-300 mx-4" />
+          <span className="text-center font-semibold font-caveat text-5xl">Merchs</span>
+          <hr className="flex-grow border-t border-gray-300 mx-4" />
+        </div>
+        <div className="px-4 py-3 md:py-4">
+          <Swiper
+            spaceBetween={36} // gap between slides in px
+            slidesPerView={1} // default for mobile
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+            breakpoints={{
+              768: { slidesPerView: 2 }, // md
+              1024: { slidesPerView: 6 }, // lg
+            }}
+          >
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => (
+              <SwiperSlide key={i}>
+                <div className="rounded-xl">
+                  <img
+                    src="../assets/icons/logo.png"
+                    alt={`Merch ${i}`}
+                    className="rounded-xl w-full object-cover"
+                  />
+                  <div className="flex justify-between items-center mt-2">
+                    <h2 className="font-semibold text-lg">Merch {i}</h2>
+                    <p className="font-bold">₱ 120</p>
+                  </div>
+                  <p className="text-sm text-gray-600">Category</p>
+                  <button className="bg-black w-full text-white px-4 py-2 rounded-lg mt-2">
+                    Buy Now
+                  </button>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
 
     </div >
