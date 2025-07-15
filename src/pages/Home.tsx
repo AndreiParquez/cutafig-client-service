@@ -271,15 +271,182 @@ const Home: React.FC = () => {
                     <p className="font-bold">₱ 120</p>
                   </div>
                   <p className="text-sm text-gray-600">Category</p>
-                  <button className="bg-black w-full text-white px-4 py-2 rounded-lg mt-2">
-                    Buy Now
-                  </button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-black w-full flex justify-center items-center space-x-2 text-white px-4 py-2 rounded-lg mt-2">
+                    <img src='../assets/icons/cart.svg' alt="" className='size-5' />
+                    <p>Buy Now</p>
+                  </motion.button>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
+        {/* View more button: span all columns on mobile */}
+        <motion.div
+          className="md:col-span-4  flex justify-center mt-6 "
+          whileHover="hover"
+          initial="rest"
+          animate="rest"
+        >
+          <button
+            className="flex items-center text-gray-700 hover:text-black text-sm"
+            type="button"
+          >
+            View More
+            <motion.img
+              variants={{
+                rest: { x: 0 },
+                hover: { x: 5 },
+              }}
+              transition={{ type: "spring", stiffness: 300 }}
+              src="../assets/icons/arrow.svg"
+              alt=""
+              className='ml-1 h-4 w-4'
+            />
+          </button>
+        </motion.div>
       </div>
+
+      <div>
+        <div className="flex items-center justify-center my-8">
+          <hr className="flex-grow border-t border-gray-300 mx-4" />
+          <span className="text-center font-semibold font-caveat text-5xl">Class</span>
+          <hr className="flex-grow border-t border-gray-300 mx-4" />
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 px-4 py-3 md:py-4'>
+          <div className='flex space-x-2'>
+            <img src="../assets/icons/rocket.svg" alt="" />
+            <div className='w-full'>
+              <h2>Search Engine Optimization (Seo)</h2>
+              <div className='flex justify-between items-center'>
+                <div className='text-sm text-zinc-700 w-1/2'>
+                  <p>July 15 - 17</p>
+                  <p>via Google Meet</p>
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-black w-1/2 flex justify-center items-center space-x-2 text-white px-4 py-2 rounded-lg mt-2">
+                  <p>Enroll</p>
+                </motion.button>
+
+              </div>
+
+
+            </div>
+
+          </div>
+          <div className='flex space-x-2 '>
+            <img src="../assets/icons/fb.svg" alt="" />
+            <div className='w-full'>
+              <h2>Digital Marketing</h2>
+              <div className='flex justify-between items-center'>
+                <div className='text-sm text-zinc-700 w-1/2'>
+                  <p>July 15 - 17</p>
+                  <p>via Google Meet</p>
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-black w-1/2 flex justify-center items-center space-x-2 text-white px-4 py-2 rounded-lg mt-2">
+                  <p>Enroll</p>
+                </motion.button>
+
+              </div>
+
+
+            </div>
+
+          </div>
+          <div className='flex space-x-2'>
+            <img src="../assets/icons/bulb.svg" alt="" />
+            <div className='w-full'>
+              <h2>Content Writing</h2>
+              <div className='flex justify-between items-center'>
+                <div className='text-sm text-zinc-700 w-1/2'>
+                  <p>July 15 - 17</p>
+                  <p>via Google Meet</p>
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-black w-1/2 flex justify-center items-center space-x-2 text-white px-4 py-2 rounded-lg mt-2">
+                  <p>Enroll</p>
+                </motion.button>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+        </div>
+        {/* View more button: span all columns on mobile */}
+        <motion.div
+          className="md:col-span-4  flex justify-center mt-6 "
+          whileHover="hover"
+          initial="rest"
+          animate="rest"
+        >
+          <button
+            className="flex items-center text-gray-700 hover:text-black text-sm"
+            type="button"
+          >
+            View More
+            <motion.img
+              variants={{
+                rest: { x: 0 },
+                hover: { x: 5 },
+              }}
+              transition={{ type: "spring", stiffness: 300 }}
+              src="../assets/icons/arrow.svg"
+              alt=""
+              className='ml-1 h-4 w-4'
+            />
+          </button>
+        </motion.div>
+
+      </div>
+
+      <footer>
+        <hr className="flex-grow border-t border-gray-300 mx-4" />
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 px-4 py-3 md:py-4'>
+          <div className='flex justify-center items-center space-x-2'>
+            <img src="../assets/icons/logo.png" alt="Cutafig Logo" className="size-32" />
+            <div>
+              <h1 className="font-bold text-5xl font-caveat">Cutafig</h1>
+              <p className="text-xs">words, art, and ideas in bloom</p>
+            </div>
+
+          </div>
+
+          <div>
+            <ul>
+              <li>
+                <h2 className='font-semibold text-lg'>About Us</h2>
+              </li>
+              <li className='text-sm text-zinc-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</li>
+              <li className='text-sm text-zinc-700'>Lorem ipsum dolor sit amet</li>
+            </ul>
+          </div>
+
+          <div>
+            <ul>
+              <li>
+                <h2 className='font-semibold text-lg'>Contact Us</h2>
+              </li>
+              <li className='text-sm text-zinc-700'>Email: <a href="mailto:info@cutafig.com">info@cutafig.com</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+
+      </footer>
 
     </div >
   );
