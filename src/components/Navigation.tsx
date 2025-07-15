@@ -27,7 +27,7 @@ const Navigation: React.FC = () => {
         <div className='flex justify-center items-center space-x-2'>
           <img src="../assets/icons/logo.png" alt="Cutafig Logo" className="h-10 w-10" />
           <div>
-            <h1 className="font-bold text-xl">Cutafig</h1>
+            <h1 className="font-bold text-2xl">Cutafig</h1>
             <p className="text-xs">words, art, and ideas in bloom</p>
           </div>
 
