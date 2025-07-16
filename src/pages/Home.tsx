@@ -412,7 +412,7 @@ const Home: React.FC = () => {
 
       </div>
 
-      <footer>
+      <footer className=" mt-12">
         <hr className="flex-grow border-t border-gray-300 mx-4" />
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 px-4 py-3 md:py-4'>
           <div className='flex justify-center items-center space-x-2'>
