@@ -250,7 +250,7 @@ const Home: React.FC = () => {
             spaceBetween={36} // gap between slides in px
             slidesPerView={1} // default for mobile
             modules={[Navigation, Pagination, Autoplay]}
-            navigation
+
            
             autoplay={{ delay: 3000 }}
             breakpoints={{
